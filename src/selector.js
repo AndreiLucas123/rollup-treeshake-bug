@@ -68,28 +68,5 @@ export function selector(from, getter) {
     };
   }
 
-  return {
-    get() {
-      if (!unsub) {
-        return getter(from.get());
-      }
-      return value;
-    },
-
-    subscribe(callback) {
-      callback(value);
-      subscribers.add(callback);
-      if (!unsub) {
-        unsub = from.subscribe((value) => set(value));
-      }
-
-      return () => {
-        subscribers.delete(callback);
-        if (subscribers.size === 0) {
-          unsub?.();
-          unsub = undefined;
-        }
-      };
-    },
-  };
+  return _selector
 }
