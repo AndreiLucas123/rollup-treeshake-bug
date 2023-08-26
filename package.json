@@ -1,0 +1,14 @@
+{
+  "name": "rollup-treeshake-bug",
+  "version": "0.0.0",
+  "author": "Andrei Lucas Gonçalves",
+  "scripts": {
+    "build": "tsc && rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "devDependencies": {
+    "prettier": "3.0.2",
+    "rollup": "^3.28.1"
+  },
+  "type": "module"
+}
